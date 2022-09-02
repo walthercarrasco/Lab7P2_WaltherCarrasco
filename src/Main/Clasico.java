@@ -14,7 +14,7 @@ public class Clasico extends Zombie{
         super();
     }
 
-    public Clasico(int experiencia, Bandera flag, String nombre, float ataque, float vida) {
+    public Clasico(int experiencia, Bandera flag, String nombre, int ataque, int vida) {
         super(nombre, ataque, vida);
         this.experiencia = experiencia;
         this.flag = flag;
