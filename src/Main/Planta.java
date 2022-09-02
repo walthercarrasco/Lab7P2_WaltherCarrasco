@@ -7,8 +7,8 @@ package Main;
  */
 public class Planta {
     private String nombre;
-    private int ataque;
-    private int vida;
+    private float ataque;
+    private float vida;
     private String rango;
 
     public Planta() {
@@ -29,7 +29,7 @@ public class Planta {
         this.nombre = nombre;
     }
 
-    public int getAtaque() {
+    public float getAtaque() {
         return ataque;
     }
 
@@ -37,7 +37,7 @@ public class Planta {
         this.ataque = ataque;
     }
 
-    public int getVida() {
+    public float getVida() {
         return vida;
     }
 

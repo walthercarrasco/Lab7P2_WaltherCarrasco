@@ -4,6 +4,8 @@
  */
 package Main;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author HP
@@ -16,7 +18,8 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         setLocationRelativeTo(null);
-        
+        bg_rango.setSelected(rb_bajo.getModel(), true);
+        bg_tipo.setSelected(rb_explosiva.getModel(), true);
     }
 
     /**
@@ -28,53 +31,301 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ppm = new javax.swing.JPopupMenu();
+        mi_imprimir = new javax.swing.JMenuItem();
+        mi_eliminar = new javax.swing.JMenuItem();
+        mi_elegir = new javax.swing.JMenuItem();
+        bg_rango = new javax.swing.ButtonGroup();
+        bg_tipo = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        p_test = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtree = new javax.swing.JTree();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ta_test = new javax.swing.JTextArea();
+        b_test = new javax.swing.JToggleButton();
+        p_plantas = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        rb_bajo = new javax.swing.JRadioButton();
+        rb_medio = new javax.swing.JRadioButton();
+        rb_alto = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
+        rb_explosiva = new javax.swing.JRadioButton();
+        rb_disparo = new javax.swing.JRadioButton();
+        rb_defensa = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        tf_nombreplanta = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        spi_ataque = new javax.swing.JSpinner();
+        jLabel6 = new javax.swing.JLabel();
+        spi_vida = new javax.swing.JSpinner();
+        b_crear = new javax.swing.JToggleButton();
+        jLabel7 = new javax.swing.JLabel();
+        spi_magnitud = new javax.swing.JSpinner();
+        jLabel8 = new javax.swing.JLabel();
+        spi_peso = new javax.swing.JSpinner();
+        jLabel9 = new javax.swing.JLabel();
+        tf_color = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        tf_proyectil1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        spi_dureza = new javax.swing.JSpinner();
+        jLabel12 = new javax.swing.JLabel();
+        spi_altura2 = new javax.swing.JSpinner();
+        p_zombies = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+
+        mi_imprimir.setText("jMenuItem1");
+        ppm.add(mi_imprimir);
+
+        mi_eliminar.setText("jMenuItem2");
+        ppm.add(mi_eliminar);
+
+        mi_elegir.setText("jMenuItem3");
+        ppm.add(mi_elegir);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Entidad");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Plantas");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Defensa");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Disparo");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Explosiva");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Zombies");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Clasico");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Cargado");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        jtree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jtree);
+
+        ta_test.setColumns(20);
+        ta_test.setRows(5);
+        jScrollPane2.setViewportView(ta_test);
+
+        b_test.setText("Testear");
+
+        javax.swing.GroupLayout p_testLayout = new javax.swing.GroupLayout(p_test);
+        p_test.setLayout(p_testLayout);
+        p_testLayout.setHorizontalGroup(
+            p_testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_testLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addGroup(p_testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(b_test, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+        p_testLayout.setVerticalGroup(
+            p_testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_testLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(p_testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(b_test)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Test", p_test);
+
+        jLabel2.setText("Rango");
+
+        bg_rango.add(rb_bajo);
+        rb_bajo.setText("Bajo");
+
+        bg_rango.add(rb_medio);
+        rb_medio.setText("Medio");
+
+        bg_rango.add(rb_alto);
+        rb_alto.setText("Alto");
+
+        jLabel3.setText("Tipo");
+
+        bg_tipo.add(rb_explosiva);
+        rb_explosiva.setText("Explosiva");
+
+        bg_tipo.add(rb_disparo);
+        rb_disparo.setText("Disparo");
+
+        bg_tipo.add(rb_defensa);
+        rb_defensa.setText("Defensa");
+
+        jLabel4.setText("Nombre");
+
+        jLabel5.setText("Ataque");
+
+        spi_ataque.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel6.setText("Vida");
+
+        spi_vida.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        b_crear.setText("Crear");
+
+        jLabel7.setText("Magnitud de Explosivo");
+
+        spi_magnitud.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel8.setText("Altura");
+
+        spi_peso.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel9.setText("Nombre de Proyectil");
+
+        jLabel10.setText("Color");
+
+        jLabel11.setText("Peso");
+
+        spi_dureza.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        spi_dureza.setToolTipText("");
+
+        jLabel12.setText("Dureza");
+
+        spi_altura2.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        javax.swing.GroupLayout p_plantasLayout = new javax.swing.GroupLayout(p_plantas);
+        p_plantas.setLayout(p_plantasLayout);
+        p_plantasLayout.setHorizontalGroup(
+            p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_plantasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(rb_medio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rb_bajo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rb_alto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p_plantasLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(83, 83, 83)
+                        .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_nombreplanta, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(64, 64, 64)
+                        .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spi_ataque, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                        .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spi_vida, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_plantasLayout.createSequentialGroup()
+                        .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(p_plantasLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(p_plantasLayout.createSequentialGroup()
+                                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(rb_disparo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(rb_explosiva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(rb_defensa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(b_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(224, 224, 224))))
+            .addGroup(p_plantasLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p_plantasLayout.createSequentialGroup()
+                        .addComponent(spi_altura2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(320, 320, 320)
+                        .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_color, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spi_dureza, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(p_plantasLayout.createSequentialGroup()
+                        .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spi_magnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45)
+                        .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spi_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)
+                            .addComponent(tf_proyectil1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        p_plantasLayout.setVerticalGroup(
+            p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_plantasLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p_plantasLayout.createSequentialGroup()
+                        .addComponent(rb_bajo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_medio, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_alto, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(p_plantasLayout.createSequentialGroup()
+                        .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rb_explosiva, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_nombreplanta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spi_ataque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spi_vida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_disparo, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rb_defensa, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(b_crear))))
+                .addGap(102, 102, 102)
+                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spi_magnitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_proyectil1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_plantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spi_peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spi_dureza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spi_altura2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Plantas", p_plantas);
+
+        javax.swing.GroupLayout p_zombiesLayout = new javax.swing.GroupLayout(p_zombies);
+        p_zombies.setLayout(p_zombiesLayout);
+        p_zombiesLayout.setHorizontalGroup(
+            p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 746, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        p_zombiesLayout.setVerticalGroup(
+            p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 416, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Test", jPanel1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 746, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Plantas", jPanel2);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 746, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Zombies", jPanel3);
+        jTabbedPane1.addTab("Zombies", p_zombies);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -118,7 +369,7 @@ public class Main extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -141,12 +392,53 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
+    
+    ArrayList<Planta> plantas = new ArrayList<>();
+    ArrayList<Zombie> zombies = new ArrayList<>();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton b_crear;
+    private javax.swing.JToggleButton b_test;
+    private javax.swing.ButtonGroup bg_rango;
+    private javax.swing.ButtonGroup bg_tipo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTree jtree;
+    private javax.swing.JMenuItem mi_elegir;
+    private javax.swing.JMenuItem mi_eliminar;
+    private javax.swing.JMenuItem mi_imprimir;
+    private javax.swing.JPanel p_plantas;
+    private javax.swing.JPanel p_test;
+    private javax.swing.JPanel p_zombies;
+    private javax.swing.JPopupMenu ppm;
+    private javax.swing.JRadioButton rb_alto;
+    private javax.swing.JRadioButton rb_bajo;
+    private javax.swing.JRadioButton rb_defensa;
+    private javax.swing.JRadioButton rb_disparo;
+    private javax.swing.JRadioButton rb_explosiva;
+    private javax.swing.JRadioButton rb_medio;
+    private javax.swing.JSpinner spi_altura2;
+    private javax.swing.JSpinner spi_ataque;
+    private javax.swing.JSpinner spi_dureza;
+    private javax.swing.JSpinner spi_magnitud;
+    private javax.swing.JSpinner spi_peso;
+    private javax.swing.JSpinner spi_vida;
+    private javax.swing.JTextArea ta_test;
+    private javax.swing.JTextField tf_color;
+    private javax.swing.JTextField tf_nombreplanta;
+    private javax.swing.JTextField tf_proyectil1;
     // End of variables declaration//GEN-END:variables
 }
