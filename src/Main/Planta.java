@@ -34,7 +34,7 @@ public class Planta {
         return ataque;
     }
 
-    public void setAtaque(int ataque) {
+    public void setAtaque(float ataque) {
         this.ataque = ataque;
     }
 
@@ -42,7 +42,7 @@ public class Planta {
         return vida;
     }
 
-    public void setVida(int vida) {
+    public void setVida(float vida) {
         this.vida = vida;
     }
 
