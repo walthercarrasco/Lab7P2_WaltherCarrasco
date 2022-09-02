@@ -5,7 +5,8 @@ package Main;
  *
  * @author HP
  */
-public class Clasico {
+public class Clasico extends Zombie{
+    
     private int experiencia;
     private Bandera flag;
 
@@ -13,10 +14,13 @@ public class Clasico {
         super();
     }
 
-    public Clasico(int experiencia, Bandera flag) {
+    public Clasico(int experiencia, Bandera flag, String nombre, float ataque, float vida) {
+        super(nombre, ataque, vida);
         this.experiencia = experiencia;
         this.flag = flag;
     }
+
+
 
     public int getExperiencia() {
         return experiencia;

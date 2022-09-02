@@ -73,6 +73,14 @@ public class Main extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         spi_altura2 = new javax.swing.JSpinner();
         p_zombies = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        tf_nombrezombie = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        spi_edad = new javax.swing.JSpinner();
+        jLabel15 = new javax.swing.JLabel();
+        spin_enojo = new javax.swing.JSpinner();
+        jLabel16 = new javax.swing.JLabel();
+        spin_ataque = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
 
         mi_imprimir.setText("jMenuItem1");
@@ -314,15 +322,65 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Plantas", p_plantas);
 
+        jLabel13.setText("Nombre");
+
+        jLabel14.setText("Edad");
+
+        spi_edad.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel15.setText("Enojo");
+
+        spin_enojo.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel16.setText("Ataque");
+
+        spin_ataque.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
         javax.swing.GroupLayout p_zombiesLayout = new javax.swing.GroupLayout(p_zombies);
         p_zombies.setLayout(p_zombiesLayout);
         p_zombiesLayout.setHorizontalGroup(
             p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 746, Short.MAX_VALUE)
+            .addGroup(p_zombiesLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(spin_ataque, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(p_zombiesLayout.createSequentialGroup()
+                        .addGroup(p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_nombrezombie, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addGroup(p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spi_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(51, 51, 51)
+                        .addGroup(p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spin_enojo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         p_zombiesLayout.setVerticalGroup(
             p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
+            .addGroup(p_zombiesLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(p_zombiesLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(spin_enojo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(p_zombiesLayout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(spi_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(p_zombiesLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_nombrezombie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spin_ataque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(287, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Zombies", p_zombies);
@@ -405,6 +463,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -433,12 +495,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner spi_altura2;
     private javax.swing.JSpinner spi_ataque;
     private javax.swing.JSpinner spi_dureza;
+    private javax.swing.JSpinner spi_edad;
     private javax.swing.JSpinner spi_magnitud;
     private javax.swing.JSpinner spi_peso;
     private javax.swing.JSpinner spi_vida;
+    private javax.swing.JSpinner spin_ataque;
+    private javax.swing.JSpinner spin_enojo;
     private javax.swing.JTextArea ta_test;
     private javax.swing.JTextField tf_color;
     private javax.swing.JTextField tf_nombreplanta;
+    private javax.swing.JTextField tf_nombrezombie;
     private javax.swing.JTextField tf_proyectil1;
     // End of variables declaration//GEN-END:variables
 }

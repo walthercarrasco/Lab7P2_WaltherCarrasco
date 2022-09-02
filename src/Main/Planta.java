@@ -6,6 +6,7 @@ package Main;
  * @author HP
  */
 public class Planta {
+    
     private String nombre;
     private float ataque;
     private float vida;
