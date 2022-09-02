@@ -6,10 +6,10 @@ package Main;
  * @author HP
  */
 public class Planta {
-    String nombre;
-    int ataque;
-    int vida;
-    String rango;
+    private String nombre;
+    private int ataque;
+    private int vida;
+    private String rango;
 
     public Planta() {
     }
