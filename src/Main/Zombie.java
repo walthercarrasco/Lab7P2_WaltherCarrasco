@@ -14,7 +14,7 @@ public class Zombie {
     public Zombie() {
     }
 
-    public Zombie(String nombre, float ataque, float vida) {
+    public Zombie(String nombre, int ataque, int vida) {
         this.nombre = nombre;
         this.ataque = ataque;
         this.vida = vida;
@@ -27,6 +27,23 @@ public class Zombie {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public float getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+
+    public float getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+    
     
     
 }

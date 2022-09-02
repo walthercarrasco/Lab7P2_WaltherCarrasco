@@ -20,8 +20,6 @@ public class Clasico extends Zombie{
         this.flag = flag;
     }
 
-
-
     public int getExperiencia() {
         return experiencia;
     }

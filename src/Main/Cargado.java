@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Cargado extends Zombie{
     
-    private double tamano;
+    private float tamano;
     private int edad;
     private ArrayList<String> comidos = new ArrayList<>();  
     private int enojo;
@@ -18,7 +18,7 @@ public class Cargado extends Zombie{
         super();
     }
 
-    public Cargado(double tamano, int edad, int enojo, String nombre, float ataque, float vida) {
+    public Cargado(int tamano, int edad, int enojo, String nombre, int ataque, int vida) {
         super(nombre, ataque, vida);
         this.tamano = tamano;
         this.edad = edad;
@@ -30,7 +30,7 @@ public class Cargado extends Zombie{
         return tamano;
     }
 
-    public void setTamano(double tamano) {
+    public void setTamano(int tamano) {
         this.tamano = tamano;
     }
 
@@ -48,6 +48,14 @@ public class Cargado extends Zombie{
 
     public void setComidos(ArrayList<String> comidos) {
         this.comidos = comidos;
+    }
+
+    public int getEnojo() {
+        return enojo;
+    }
+
+    public void setEnojo(int enojo) {
+        this.enojo = enojo;
     }
     
     
