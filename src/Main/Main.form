@@ -137,7 +137,7 @@
                 <Component class="javax.swing.JTree" name="jtree">
                   <Properties>
                     <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-                      <TreeModel code="Entidad&#xa; Plantas&#xa;  Defensa&#xa;  Disparo&#xa;  Explosiva&#xa; Zombies&#xa;  Clasico&#xa;  Cargado"/>
+                      <TreeModel code="Entidad&#xa; Plantas&#xa;  Defensa&#xa;   Alto&#xa;   Medio&#xa;   Bajo&#xa;  Disparo&#xa;   Alto&#xa;   Medio&#xa;   Bajo&#xa;  Explosiva&#xa;   Alto&#xa;   Medio&#xa;   Bajo&#xa; Zombies&#xa;  Clasico&#xa;  Cargado"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -416,6 +416,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="b_crearMousePressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
@@ -525,7 +528,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel21" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="tb_clasico" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="rb_clasico" alignment="0" max="32767" attributes="0"/>
                                               <Component id="rb_cargado" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -603,7 +606,7 @@
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="tb_clasico" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb_clasico" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="rb_cargado" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -757,7 +760,7 @@
                 <Property name="text" type="java.lang.String" value="Tipo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="tb_clasico">
+            <Component class="javax.swing.JRadioButton" name="rb_clasico">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="bg_tipozombie"/>

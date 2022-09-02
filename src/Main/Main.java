@@ -4,22 +4,28 @@
  */
 package Main;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author HP
  */
 public class Main extends javax.swing.JFrame {
+    
+    
 
     /**
      * Creates new form Main
      */
-    public Main() {
+    public Main() throws IOException {
         initComponents();
         setLocationRelativeTo(null);
         bg_rango.setSelected(rb_bajo.getModel(), true);
         bg_tipo.setSelected(rb_explosiva.getModel(), true);
+        bg_tipozombie.setSelected(rb_clasico.getModel(), true);
+        ar.cargar();
     }
 
     /**
@@ -94,7 +100,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jl_personas = new javax.swing.JList<>();
         jLabel21 = new javax.swing.JLabel();
-        tb_clasico = new javax.swing.JRadioButton();
+        rb_clasico = new javax.swing.JRadioButton();
         rb_cargado = new javax.swing.JRadioButton();
         jLabel22 = new javax.swing.JLabel();
         tf_colorzombie = new javax.swing.JTextField();
@@ -118,10 +124,28 @@ public class Main extends javax.swing.JFrame {
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Entidad");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Plantas");
         javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Defensa");
+        javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Alto");
+        treeNode3.add(treeNode4);
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Medio");
+        treeNode3.add(treeNode4);
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Bajo");
+        treeNode3.add(treeNode4);
         treeNode2.add(treeNode3);
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Disparo");
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Alto");
+        treeNode3.add(treeNode4);
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Medio");
+        treeNode3.add(treeNode4);
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Bajo");
+        treeNode3.add(treeNode4);
         treeNode2.add(treeNode3);
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Explosiva");
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Alto");
+        treeNode3.add(treeNode4);
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Medio");
+        treeNode3.add(treeNode4);
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Bajo");
+        treeNode3.add(treeNode4);
         treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Zombies");
@@ -199,6 +223,11 @@ public class Main extends javax.swing.JFrame {
         spi_vida.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         b_crear.setText("Crear");
+        b_crear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                b_crearMousePressed(evt);
+            }
+        });
 
         jLabel7.setText("Magnitud de Explosivo");
 
@@ -375,8 +404,8 @@ public class Main extends javax.swing.JFrame {
 
         jLabel21.setText("Tipo");
 
-        bg_tipozombie.add(tb_clasico);
-        tb_clasico.setText("Clasico");
+        bg_tipozombie.add(rb_clasico);
+        rb_clasico.setText("Clasico");
 
         bg_tipozombie.add(rb_cargado);
         rb_cargado.setText("Cargado");
@@ -418,7 +447,7 @@ public class Main extends javax.swing.JFrame {
                                 .addGroup(p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(tb_clasico, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(rb_clasico, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(rb_cargado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(p_zombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,7 +506,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tb_clasico)
+                        .addComponent(rb_clasico)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rb_cargado))
                     .addGroup(p_zombiesLayout.createSequentialGroup()
@@ -540,6 +569,21 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void b_crearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crearMousePressed
+        // TODO add your handling code here:
+        try{
+            if(bg_tipo.getSelection() == rb_defensa.getModel()){
+                
+            }else if(bg_tipo.getSelection() == rb_disparo.getModel()){
+                
+            }else if(bg_tipo.getSelection() == rb_explosiva.getModel()){
+                
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Error Al Agregar");
+        }
+    }//GEN-LAST:event_b_crearMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -575,8 +619,7 @@ public class Main extends javax.swing.JFrame {
         });
     }
     
-    ArrayList<Planta> plantas = new ArrayList<>();
-    ArrayList<Zombie> zombies = new ArrayList<>();
+    Adminitradora ar = new Adminitradora();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton b_crear;
@@ -625,6 +668,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_alto;
     private javax.swing.JRadioButton rb_bajo;
     private javax.swing.JRadioButton rb_cargado;
+    private javax.swing.JRadioButton rb_clasico;
     private javax.swing.JRadioButton rb_defensa;
     private javax.swing.JRadioButton rb_disparo;
     private javax.swing.JRadioButton rb_explosiva;
@@ -642,7 +686,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner spin_tamano;
     private javax.swing.JSpinner spin_vidazombie;
     private javax.swing.JTextArea ta_test;
-    private javax.swing.JRadioButton tb_clasico;
     private javax.swing.JTextField tf_color;
     private javax.swing.JTextField tf_colorzombie;
     private javax.swing.JTextField tf_direccion;

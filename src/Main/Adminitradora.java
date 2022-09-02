@@ -1,7 +1,10 @@
 
 package Main;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -48,5 +51,27 @@ public class Adminitradora {
 
     public void setPlantas(ArrayList<Planta> plantas) {
         this.plantas = plantas;
+    }
+    
+    public void cargar() throws IOException{
+        FileReader fr = null;
+        BufferedReader br = null;
+        try{
+            if(txtplantas.exists()){
+                fr = new FileReader(txtplantas);
+                br = new BufferedReader(fr);
+                String[] plan = br.readLine().split("|");
+                for (int i = 0; i < plan.length; i++) {
+                    String[] atri1 = plan[i].split("_");
+                }
+            }
+            if(txtzombie.exists()){
+                
+            }
+        }catch(Exception ex){
+            
+        }
+        br.close();
+        fr.close();
     }
 }
