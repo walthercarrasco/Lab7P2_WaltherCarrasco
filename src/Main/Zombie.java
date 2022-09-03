@@ -32,7 +32,7 @@ public class Zombie {
         return ataque;
     }
 
-    public void setAtaque(int ataque) {
+    public void setAtaque(float ataque) {
         this.ataque = ataque;
     }
 
@@ -40,8 +40,13 @@ public class Zombie {
         return vida;
     }
 
-    public void setVida(int vida) {
+    public void setVida(float vida) {
         this.vida = vida;
+    }
+
+    @Override
+    public String toString() {
+        return "Zombie{" + "nombre=" + nombre + ", ataque=" + ataque + ", vida=" + vida + '}';
     }
     
     

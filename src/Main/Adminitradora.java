@@ -237,4 +237,235 @@ public class Adminitradora {
         }
 
     }
+    
+    public void cargarZombies(){
+        FileReader fr = null;
+        BufferedReader br = null;
+        try{
+            if(txtzombies.exists()){
+                
+                
+                fr = new FileReader(txtzombies);
+                br = new BufferedReader(fr);
+                
+                String[] zom = br.readLine().split("\\|");
+                
+                String nombre = "";
+                float ataque = 0;
+                float vida = 0;
+                
+                for (int i = 0; i < zom.length; i++) {
+                    String[] atributos = zom[i].split("_");
+                    
+                    if(atributos[0].contains("Nombre")){
+                        
+                        
+                        String[] atrigenerales = atributos[0].split(",");
+                        for(int j = 0; j < atrigenerales.length; j++ ){
+                            String[] a = atrigenerales[j].split("=");
+                            if(a[0].equalsIgnoreCase("Nombre")){
+                                nombre = a[1];
+                            }else if(a[0].equalsIgnoreCase("Vida")){
+                                vida = Float.parseFloat(a[1]);
+                            }else if(a[0].equalsIgnoreCase("Ataque")){
+                                ataque = Float.parseFloat(a[1]);
+                            }
+                        }
+                        String[] n = atributos[1].split(":");
+                        
+                        if(n[0].equalsIgnoreCase("CLasico")){
+                            int experiencia = 0;
+                            String color = "";
+                            String direccion = "";
+                            Bandera bandera = new Bandera();
+                            
+                            String at = n[1].substring(1, n[1].length() - 1);
+                            String[] atri2 = at.split(";");
+                            if(atri2[0].contains("Experiencia")){
+                                
+                                String[] x = atri2[0].split("=");
+                                experiencia = Integer.parseInt(x[1]);
+                                
+                                String b = atri2[1].substring(8, atri2[1].length() - 1);
+                                String[] atriban = b.split(",");
+                                for (String a : atriban) {
+                                    String[] a2 = a.split("/");
+                                    if(a.contains("Color")){
+                                        color = a2[1];
+                                        bandera.setColor(color);
+                                    }
+                                    if(a.contains("Direccion")){
+                                        direccion = a2[1];
+                                        bandera.setDireccion(direccion);
+                                    }
+                                }
+                            }else{
+                                String[] x = atri2[1].split("=");
+                                experiencia = Integer.parseInt(x[1]);
+                                
+                                String b = atri2[0].substring(8, atri2[0].length() - 1);
+                                String[] atriban = b.split(",");
+                                for (String a : atriban) {
+                                    String[] a2 = a.split("/");
+                                    if(a.contains("Color")){
+                                        color = a2[1];
+                                    }
+                                    if(a.contains("Direccion")){
+                                        direccion = a2[1];
+                                    }
+                                }
+                                bandera = new Bandera(color, direccion);  
+                            }
+                            Zombie zombie = new Clasico();
+                            zombie.setAtaque(ataque);
+                            zombie.setNombre(nombre);
+                            zombie.setVida(vida);
+                            ((Clasico)zombie).setExperiencia(experiencia);
+                            ((Clasico)zombie).setFlag(bandera);
+                            zombies.add(zombie);
+                        }else if(n[0].equalsIgnoreCase("Cargado")){
+                            String sub = n[1].substring(1, n[1].length() - 1);
+                            String[] m = sub.split(";");
+                            int enojo = 0;
+                            int edad = 0;
+                            int tamano = 0;
+                            ArrayList<String> comidos = new ArrayList<>();
+                            for (String m2 : m) {
+                                String[] ma = m2.split("=");
+                                if(ma[0].equalsIgnoreCase("Enojo")){
+                                    enojo = Integer.parseInt(ma[1]);
+                                }else if(ma[0].equalsIgnoreCase("Edad")){
+                                    edad = Integer.parseInt(ma[1]);
+                                }else if (ma[0].equalsIgnoreCase("Comidos")){
+                                    String[] comido = ma[1].substring(1, ma[1].length() - 1).split(",");
+                                    for (String string : comido) {
+                                        comidos.add(string);
+                                    }
+                                }else if(ma[0].equalsIgnoreCase("Tamano")){
+                                    tamano = Integer.parseInt(ma[1]);
+                                }
+                            }
+                            Zombie z = new Cargado();
+                            z.setAtaque(ataque);
+                            z.setNombre(nombre);
+                            z.setVida(vida);
+                            
+                            ((Cargado)z).setTamano(tamano);
+                            ((Cargado)z).setComidos(comidos);
+                            ((Cargado)z).setEnojo(enojo);
+                            ((Cargado)z).setEdad(edad);
+                            zombies.add(z);
+                        }
+                        
+                    }else if(atributos[1].contains("Nombre")){
+                        String[] atrigenerales = atributos[1].split(",");
+                        
+                        for(int j = 0; j < atrigenerales.length; j++ ){
+                            String[] a = atrigenerales[j].split("=");
+                            if(a[0].equalsIgnoreCase("Nombre")){
+                                nombre = a[1];
+                            }else if(a[0].equalsIgnoreCase("Vida")){
+                                vida = Float.parseFloat(a[1]);
+                            }else if(a[0].equalsIgnoreCase("Ataque")){
+                                ataque = Float.parseFloat(a[1]);
+                            }
+                        }
+                        String[] n = atributos[0].split(":");
+                        
+                        if(n[0].equalsIgnoreCase("CLasico")){
+                            int experiencia = 0;
+                            String color = "";
+                            String direccion = "";
+                            Bandera bandera = new Bandera();
+                            
+                            String at = n[1].substring(1, n[1].length() - 1);
+                            String[] atri2 = at.split(";");
+                            
+                            if(atri2[0].contains("Experiencia")){
+                                
+                                String[] x = atri2[0].split("=");
+                                experiencia = Integer.parseInt(x[1]);
+                                
+                                String b = atri2[1].substring(8, atri2[1].length() - 1);
+                                String[] atriban = b.split(",");
+                                for (String a : atriban) {
+                                    String[] a2 = a.split("/");
+                                    if(a.contains("Color")){
+                                        color = a2[1];
+                                        bandera.setColor(color);
+                                    }
+                                    if(a.contains("Direccion")){
+                                        direccion = a2[1];
+                                        bandera.setDireccion(direccion);
+                                    }
+                                }
+                            }else{
+                                
+                                String[] x = atri2[1].split("=");
+                                experiencia = Integer.parseInt(x[1]);
+                                
+                                String b = atri2[0].substring(8, atri2[0].length() - 1);
+                                String[] atriban = b.split(",");
+                                for (String a : atriban) {
+                                    String[] a2 = a.split("/");
+                                    if(a.contains("Color")){
+                                        color = a2[1];
+                                    }
+                                    if(a.contains("Direccion")){
+                                        direccion = a2[1];
+                                    }
+                                }
+                                bandera = new Bandera(color, direccion);                               
+                            }
+                            Zombie zombie = new Clasico();
+                            zombie.setAtaque(ataque);
+                            zombie.setNombre(nombre);
+                            zombie.setVida(vida);
+                            ((Clasico)zombie).setExperiencia(experiencia);
+                            ((Clasico)zombie).setFlag(bandera);
+                            zombies.add(zombie);
+                        }else if(n[0].equalsIgnoreCase("Cargado")){
+                            String sub = n[1].substring(1, n[1].length() - 1);
+                            String[] m = sub.split(";");
+                            int enojo = 0;
+                            int edad = 0;
+                            int tamano = 0;
+                            ArrayList<String> comidos = new ArrayList<>();
+                            for (String m2 : m) {
+                                String[] ma = m2.split("=");
+                                if(ma[0].equalsIgnoreCase("Enojo")){
+                                    enojo = Integer.parseInt(ma[1]);
+                                }else if(ma[0].equalsIgnoreCase("Edad")){
+                                    edad = Integer.parseInt(ma[1]);
+                                }else if (ma[0].equalsIgnoreCase("Comidos")){
+                                    String[] comido = ma[1].substring(1, ma[1].length() - 1).split(",");
+                                    for (String string : comido) {
+                                        comidos.add(string);
+                                    }
+                                }else if(ma[0].equalsIgnoreCase("Tamano")){
+                                    tamano = Integer.parseInt(ma[1]);
+                                }
+                            }
+                            Zombie z = new Cargado();
+                            z.setAtaque(ataque);
+                            z.setNombre(nombre);
+                            z.setVida(vida);
+                            
+                            ((Cargado)z).setTamano(tamano);
+                            ((Cargado)z).setComidos(comidos);
+                            ((Cargado)z).setEnojo(enojo);
+                            ((Cargado)z).setEdad(edad);
+                            zombies.add(z);
+                        }                        
+                        
+                    }
+                }
+                br.close();
+                fr.close();                
+            }
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }        
+    }
 }

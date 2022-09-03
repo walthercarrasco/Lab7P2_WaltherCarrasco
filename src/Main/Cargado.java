@@ -57,6 +57,11 @@ public class Cargado extends Zombie{
     public void setEnojo(int enojo) {
         this.enojo = enojo;
     }
+
+    @Override
+    public String toString() {
+        return "Cargado{" + "tamano=" + tamano + ", edad=" + edad + ", comidos=" + comidos + ", enojo=" + enojo + "   " + super.toString();
+    }
     
     
 }

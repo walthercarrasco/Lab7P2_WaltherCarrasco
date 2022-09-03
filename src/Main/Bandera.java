@@ -32,6 +32,11 @@ public class Bandera {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    @Override
+    public String toString() {
+        return "Bandera{" + "color=" + color + ", direccion=" + direccion + '}';
+    }
     
     
 }

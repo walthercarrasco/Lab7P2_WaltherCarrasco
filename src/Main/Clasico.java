@@ -35,6 +35,11 @@ public class Clasico extends Zombie{
     public void setFlag(Bandera flag) {
         this.flag = flag;
     }
+
+    @Override
+    public String toString() {
+        return "Clasico{" + "experiencia=" + experiencia + ", flag=" + flag.toString() + "   " + super.toString() ;
+    }
     
     
     

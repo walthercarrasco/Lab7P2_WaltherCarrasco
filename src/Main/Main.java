@@ -26,7 +26,8 @@ public class Main extends javax.swing.JFrame {
         bg_tipozombie.setSelected(rb_clasico.getModel(), true);
         
         ar.cargarPlanta();
-
+        ar.cargarZombies();
+        
     }
 
     /**
@@ -622,6 +623,10 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         });
+    }
+    
+    public void llenartree(){
+        
     }
     
     Adminitradora ar = new Adminitradora();
