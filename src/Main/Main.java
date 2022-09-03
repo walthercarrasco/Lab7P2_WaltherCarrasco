@@ -404,7 +404,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel20.setText("Agregar Persona");
 
-        jButton1.setText("+");
+        jButton1.setText("Agregar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton1MousePressed(evt);
@@ -478,7 +478,7 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(p_zombiesLayout.createSequentialGroup()
                                 .addComponent(tf_persona, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(spin_enojo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -641,8 +641,19 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
         try{
-            
-            
+            if(bg_tipozombie.getSelection() == rb_clasico.getModel()){
+                Bandera flag = new Bandera(tf_colorzombie.getText(), tf_direccion.getText());
+                Zombie z = new Clasico((Integer)spin_experiencia.getValue(), flag, 
+                        tf_nombrezombie.getText(), (Integer)spin_ataquezombie.getValue(), (Integer)spin_vidazombie.getValue());
+                ar.getZombies().add(z);
+            }else{
+                Zombie z = new Cargado((Integer)spin_tamano.getValue(), (Integer)spi_edad.getValue(), (Integer)spin_enojo.getValue(), 
+                            tf_nombrezombie.getText(), (Integer)spin_ataquezombie.getValue(), (Integer)spin_vidazombie.getValue());
+                ar.getZombies().add(z);
+            }
+            jtree.setModel(model);
+            llenartree();
+            JOptionPane.showMessageDialog(this, "Zombie Agregado");
         }catch(Exception e){
             JOptionPane.showMessageDialog(this, "Error Al Agregar Zombie");
         }
@@ -651,8 +662,10 @@ public class Main extends javax.swing.JFrame {
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         // TODO add your handling code here:
         if(!tf_persona.getText().isEmpty() || !tf_persona.getText().isBlank()){
-            DefaultListModel m = (DefaultListModel)jtree.getModel();
+            DefaultListModel m = (DefaultListModel)jl_personas.getModel();
             m.addElement(tf_persona.getText());
+            jl_personas.setModel(m);
+            
         }else{
             JOptionPane.showMessageDialog(this, "Ingrese Nombre a Persona");
         }

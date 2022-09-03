@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.7" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JPopupMenu" name="ppm">
 
@@ -546,7 +546,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="tf_persona" min="-2" pref="153" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jButton1" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" pref="91" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="spin_enojo" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
                                   <Component id="jLabel15" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
@@ -733,7 +733,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="+"/>
+                <Property name="text" type="java.lang.String" value="Agregar"/>
               </Properties>
               <Events>
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MousePressed"/>
