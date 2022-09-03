@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -27,7 +29,7 @@ public class Main extends javax.swing.JFrame {
         
         ar.cargarPlanta();
         ar.cargarZombies();
-        
+        llenartree();
     }
 
     /**
@@ -626,6 +628,70 @@ public class Main extends javax.swing.JFrame {
     }
     
     public void llenartree(){
+        DefaultTreeModel modelo = (DefaultTreeModel)jtree.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode)modelo.getRoot();
+        for (Planta planta : ar.getPlantas()) {
+            DefaultMutableTreeNode tipo = (DefaultMutableTreeNode)raiz.getChildAt(0);
+            if(planta instanceof Explosiva){
+                DefaultMutableTreeNode rango = (DefaultMutableTreeNode)tipo.getChildAt(2);
+                if(planta.getRango().equalsIgnoreCase("Bajo")){
+                    DefaultMutableTreeNode r = (DefaultMutableTreeNode)rango.getChildAt(2);
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(planta);
+                    r.add(n);
+                }else if(planta.getRango().equalsIgnoreCase("Medio")){
+                    DefaultMutableTreeNode r = (DefaultMutableTreeNode)rango.getChildAt(1);
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(planta);
+                    r.add(n);                    
+                }else if(planta.getRango().equalsIgnoreCase("Alto")){
+                    DefaultMutableTreeNode r = (DefaultMutableTreeNode)rango.getChildAt(0);
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(planta);
+                    r.add(n);                    
+                } 
+            }else if(planta instanceof Defensa){
+                DefaultMutableTreeNode rango = (DefaultMutableTreeNode)tipo.getChildAt(0);
+                if(planta.getRango().equalsIgnoreCase("Bajo")){
+                    DefaultMutableTreeNode r = (DefaultMutableTreeNode)rango.getChildAt(2);
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(planta);
+                    r.add(n);
+                }else if(planta.getRango().equalsIgnoreCase("Medio")){
+                    DefaultMutableTreeNode r = (DefaultMutableTreeNode)rango.getChildAt(1);
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(planta);
+                    r.add(n);                    
+                }else if(planta.getRango().equalsIgnoreCase("Alto")){
+                    DefaultMutableTreeNode r = (DefaultMutableTreeNode)rango.getChildAt(0);
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(planta);
+                    r.add(n);                    
+                }                
+            }else if(planta instanceof Disparo){
+                DefaultMutableTreeNode rango = (DefaultMutableTreeNode)tipo.getChildAt(1);
+                if(planta.getRango().equalsIgnoreCase("Bajo")){
+                    DefaultMutableTreeNode r = (DefaultMutableTreeNode)rango.getChildAt(2);
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(planta);
+                    r.add(n);
+                }else if(planta.getRango().equalsIgnoreCase("Medio")){
+                    DefaultMutableTreeNode r = (DefaultMutableTreeNode)rango.getChildAt(1);
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(planta);
+                    r.add(n);                    
+                }else if(planta.getRango().equalsIgnoreCase("Alto")){
+                    DefaultMutableTreeNode r = (DefaultMutableTreeNode)rango.getChildAt(0);
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(planta);
+                    r.add(n);                    
+                }                
+            }
+        }
+        modelo.reload();
+        for (Zombie zomby : ar.getZombies()) {
+            DefaultMutableTreeNode zom = (DefaultMutableTreeNode)raiz.getChildAt(1);
+            DefaultMutableTreeNode zomb = new DefaultMutableTreeNode(zomby);
+            if(zomby instanceof Clasico){
+                DefaultMutableTreeNode t = (DefaultMutableTreeNode)zom.getChildAt(0);
+                t.add(zomb);
+            }else{
+                DefaultMutableTreeNode t = (DefaultMutableTreeNode)zom.getChildAt(1);
+                t.add(zomb);               
+            }
+        }
+        modelo.reload();
         
     }
     
