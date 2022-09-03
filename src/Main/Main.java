@@ -7,6 +7,7 @@ package Main;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
@@ -29,6 +30,7 @@ public class Main extends javax.swing.JFrame {
         
         ar.cargarPlanta();
         ar.cargarZombies();
+        this.model = (DefaultTreeModel)jtree.getModel();
         llenartree();
     }
 
@@ -403,7 +405,14 @@ public class Main extends javax.swing.JFrame {
         jLabel20.setText("Agregar Persona");
 
         jButton1.setText("+");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
 
+        jl_personas.setModel(new DefaultListModel());
+        jl_personas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane3.setViewportView(jl_personas);
 
         jLabel21.setText("Tipo");
@@ -419,6 +428,11 @@ public class Main extends javax.swing.JFrame {
         jLabel23.setText("Direccion");
 
         jButton2.setText("Crear");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton2MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout p_zombiesLayout = new javax.swing.GroupLayout(p_zombies);
         p_zombies.setLayout(p_zombiesLayout);
@@ -577,16 +591,72 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             if(bg_tipo.getSelection() == rb_defensa.getModel()){
+                if(bg_rango.getSelection() == rb_bajo.getModel()){
+                    Planta p = new  Defensa((Integer)spi_altura2.getValue(), (Integer)spi_dureza.getValue(), (Integer)spi_peso.getValue()
+                            , tf_nombreplanta.getText(), (Integer)spi_ataque.getValue(), (Integer)spi_vida.getValue(), "Bajo");
+                    ar.getPlantas().add(p);
+                }else if(bg_rango.getSelection() == rb_medio.getModel()){
+                    Planta p = new Defensa((Integer)spi_altura2.getValue(), (Integer)spi_dureza.getValue(), (Integer)spi_peso.getValue()
+                            , tf_nombreplanta.getText(), (Integer)spi_ataque.getValue(), (Integer)spi_vida.getValue(), "Medio");
+                    ar.getPlantas().add(p);
+                }else if(bg_rango.getSelection() == rb_alto.getModel()){
+                    Planta p = new Defensa((Integer)spi_altura2.getValue(), (Integer)spi_dureza.getValue(), (Integer)spi_peso.getValue()
+                            , tf_nombreplanta.getText(), (Integer)spi_ataque.getValue(), (Integer)spi_vida.getValue(), "Alto");
+                    ar.getPlantas().add(p);                    
+                }
                 
             }else if(bg_tipo.getSelection() == rb_disparo.getModel()){
-                
+                if(bg_rango.getSelection() == rb_bajo.getModel()){
+                    Planta p = new Disparo(tf_proyectil1.getText(), tf_color.getText()
+                            , tf_nombreplanta.getText(), (Integer)spi_ataque.getValue(), (Integer)spi_vida.getValue(), "Bajo");
+                    ar.getPlantas().add(p);
+                }else if(bg_rango.getSelection() == rb_medio.getModel()){
+                    Planta p = new Disparo(tf_proyectil1.getText(), tf_color.getText()
+                            , tf_nombreplanta.getText(), (Integer)spi_ataque.getValue(), (Integer)spi_vida.getValue(), "Medio");
+                    ar.getPlantas().add(p);                    
+                }else if(bg_rango.getSelection() == rb_alto.getModel()){
+                    Planta p = new Disparo(tf_proyectil1.getText(), tf_color.getText()
+                            , tf_nombreplanta.getText(), (Integer)spi_ataque.getValue(), (Integer)spi_vida.getValue(), "Alto");
+                    ar.getPlantas().add(p);                    
+                }                
             }else if(bg_tipo.getSelection() == rb_explosiva.getModel()){
-                
+                if(bg_rango.getSelection() == rb_bajo.getModel()){
+                    Planta p = new Explosiva((Integer)spi_magnitud.getValue()
+                            , tf_nombreplanta.getText(), (Integer)spi_ataque.getValue(), (Integer)spi_vida.getValue(), "Bajo");
+                }else if(bg_rango.getSelection() == rb_medio.getModel()){
+                    Planta p = new Explosiva((Integer)spi_magnitud.getValue()
+                            , tf_nombreplanta.getText(), (Integer)spi_ataque.getValue(), (Integer)spi_vida.getValue(), "Medio");                    
+                }else if(bg_rango.getSelection() == rb_alto.getModel()){
+                    Planta p = new Explosiva((Integer)spi_magnitud.getValue()
+                            , tf_nombreplanta.getText(), (Integer)spi_ataque.getValue(), (Integer)spi_vida.getValue(), "Alto");                    
+                }                
             }
+            jtree.setModel(model);
+            llenartree();
+            JOptionPane.showMessageDialog(this, "Planta Agregada con Exito");
         }catch(Exception e){
             JOptionPane.showMessageDialog(this, "Error Al Agregar");
         }
     }//GEN-LAST:event_b_crearMousePressed
+
+    private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
+        try{
+            
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Error Al Agregar Zombie");
+        }
+    }//GEN-LAST:event_jButton2MousePressed
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        // TODO add your handling code here:
+        if(!tf_persona.getText().isEmpty() || !tf_persona.getText().isBlank()){
+            DefaultListModel m = (DefaultListModel)jtree.getModel();
+            m.addElement(tf_persona.getText());
+        }else{
+            JOptionPane.showMessageDialog(this, "Ingrese Nombre a Persona");
+        }
+    }//GEN-LAST:event_jButton1MousePressed
 
     /**
      * @param args the command line arguments
@@ -696,6 +766,7 @@ public class Main extends javax.swing.JFrame {
     }
     
     Adminitradora ar = new Adminitradora();
+    DefaultTreeModel model;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton b_crear;
