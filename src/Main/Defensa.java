@@ -44,6 +44,11 @@ public class Defensa extends Planta{
     public void setPeso(int peso) {
         this.peso = peso;
     }
+
+    @Override
+    public String toString() {
+        return "Defensa{" + "altura=" + altura + ", dureza=" + dureza + ", peso=" + peso + super.toString();
+    }
     
     
 

@@ -5,7 +5,6 @@
 package Main;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -15,8 +14,6 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class Main extends javax.swing.JFrame {
-    
-    
 
     /**
      * Creates new form Main
@@ -27,7 +24,9 @@ public class Main extends javax.swing.JFrame {
         bg_rango.setSelected(rb_bajo.getModel(), true);
         bg_tipo.setSelected(rb_explosiva.getModel(), true);
         bg_tipozombie.setSelected(rb_clasico.getModel(), true);
-        ar.cargar();
+        
+        ar.cargarPlanta();
+
     }
 
     /**

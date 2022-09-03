@@ -36,6 +36,12 @@ public class Disparo extends Planta{
     public void setColor(String color) {
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Disparo{" + "proyectil=" + proyectil + ", color=" + color +  super.toString();
+    }
+    
     
     
     

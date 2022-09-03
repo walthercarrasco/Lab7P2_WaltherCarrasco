@@ -53,6 +53,11 @@ public class Planta {
     public void setRango(String rango) {
         this.rango = rango;
     }
-    
 
+    @Override
+    public String toString() {
+        return "Planta{" + "nombre=" + nombre + ", ataque=" + ataque + ", vida=" + vida + ", rango=" + rango + '}';
+    }
+    
+    
 }
